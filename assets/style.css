@@ -1,0 +1,302 @@
+body {
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0rem;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+main {
+  width: 100%;
+}
+
+.header {
+  padding: 1rem;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
+  z-index: 1000;
+  width: 100%;
+  height: 2.8%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-logo {
+  height: 57%;
+  font-family: "Shrikhand";
+  font-size: 1.875rem;
+  margin-bottom: 1rem;
+}
+
+.local {
+  display: flex;
+  justify-content: center;
+  padding: 1.25rem 1rem;
+  background-color: rgb(243, 243, 243);
+  font-size: 1.2rem;
+  position: relative;
+  width: 100%;
+}
+.local__icon {
+  margin-right: 1rem;
+}
+.local__text {
+  font-weight: 700;
+}
+
+.hero {
+  padding: 2rem;
+  text-align: center;
+  background-color: rgb(250, 250, 250);
+}
+.hero__title {
+  margin: 0;
+}
+.hero__subtitle {
+  font-weight: 300;
+  margin: 1.5rem 0;
+}
+
+.hero__button {
+  opacity: 1;
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  font-size: 1.1rem;
+  border-radius: 12.5rem;
+  color: white;
+  background: linear-gradient(0deg, rgba(147, 86, 220, 0.9), rgba(255, 121, 218, 0.9));
+  transition-duration: 0.25s;
+  box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+.hero__button:hover {
+  opacity: 0.8;
+  background-color: white;
+  box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.container {
+  max-width: 1445px;
+  margin: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.tuto {
+  padding: 2rem 1rem;
+}
+.tuto__title {
+  margin-top: 0;
+}
+.tuto__steps {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: compteListe;
+}
+@media (min-width: 64rem) {
+  .tuto__steps {
+    display: flex;
+  }
+}
+.tuto__step {
+  padding: 1.5rem;
+  margin: 1rem 0 1rem 0.75rem;
+  box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.125);
+  border-radius: 1.25rem;
+  background-color: #f6f6f6;
+  display: flex;
+  position: relative;
+}
+.tuto__step:hover {
+  transform: scale(1.02);
+  background-color: #f6f6f6;
+}
+@media (min-width: 64rem) {
+  .tuto__step {
+    flex: 1;
+    margin: 0;
+    margin-left: 2rem;
+  }
+  .tuto__step:first-child {
+    margin-left: 0.75rem;
+  }
+}
+.tuto__step:first-child {
+  margin-top: 0;
+}
+.tuto__step:last-child {
+  margin-bottom: 0;
+}
+.tuto__step::before {
+  counter-increment: compteListe 1;
+  content: counter(compteListe) " ";
+  background: #9356DC;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  position: absolute;
+  left: -0.75rem;
+}
+.tuto__icon {
+  margin-right: 1rem;
+  color: #7e7e7e;
+}
+.tuto__icon:hover {
+  color: #9356DC;
+}
+
+.restaurants {
+  background-color: #f6f6f6;
+  padding: 2rem 1rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  column-gap: 2rem;
+  row-gap: 2rem;
+}
+@media (min-width: 64rem) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.card {
+  background-color: white;
+  border-radius: 1rem;
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+.card__img {
+  height: 12rem;
+  width: 100%;
+  border: transparent solid 0px;
+  border-radius: 1rem 1rem 0 0;
+  box-shadow: none;
+  object-fit: cover;
+}
+.card__badge {
+  background-color: #99E2D0;
+  color: #1b6150;
+  padding: 0.5rem;
+  border-radius: 0.125rem;
+  position: absolute;
+  top: 1rem;
+  right: 0.75rem;
+}
+.card__footer {
+  padding: 1rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.card__content {
+  flex: 1;
+}
+.card__title {
+  margin: 0;
+  margin-bottom: 0.25rem;
+}
+.card__subtitle {
+  margin: 0;
+}
+.card__btn {
+  height: 2rem;
+  width: 2rem;
+  background-color: transparent;
+  border: transparent 0rem solid;
+  padding: 0;
+  position: relative;
+}
+.card i {
+  position: absolute;
+  top: 10%;
+  right: 0%;
+}
+.card .menu__like--bg {
+  opacity: 0;
+}
+.card .menu__like--bg:hover {
+  opacity: 1;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  transition: 0.4s ease-in-out;
+  background-image: linear-gradient(0deg, rgba(147, 86, 220, 0.9), rgba(255, 121, 218, 0.9));
+}
+.card__like {
+  background-color: white !important;
+}
+
+.footer {
+  background-color: #353535;
+  width: 100%;
+}
+.footer .container {
+  display: flex;
+  flex-direction: column;
+  padding: 1.375rem 1.563rem;
+  align-items: flex-start;
+  gap: 1rem;
+}
+@media (min-width: 64rem) {
+  .footer .container {
+    flex-direction: row-reverse;
+  }
+}
+.footer__logo {
+  color: white;
+  font-family: "Shrikhand", "cursive";
+  margin: 0;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+.footer__list {
+  list-style: none;
+  padding: 0.15rem;
+  margin: 0;
+  gap: 0.438rem;
+}
+@media (min-width: 64rem) {
+  .footer__list {
+    display: flex;
+    flex-direction: row;
+  }
+}
+.footer__listElt {
+  margin: 0.5rem 0;
+}
+.footer__link {
+  color: white;
+  text-decoration: none;
+}
+.footer__link:hover {
+  text-decoration: underline;
+}
+.footer__icon {
+  width: 1.2rem;
+  margin-right: 0.5rem;
+}
+
+/*# sourceMappingURL=style.css.map */
