@@ -19,28 +19,52 @@ main {
   width: 100%;
 }
 
-.loader {
-  border: 0.625em;
-  width: 100%;
+.loader-position {
+  position: fixed;
   height: 100%;
-  margin: auto;
-  position: absolute;
-  border-top: 0.625rem solid #9356DC;
-  border-bottom: 0.625rem solid #FF79DA;
-  border-left: 0.625rem solid #99E2D0;
-  border-right: 0.625rem solid #0ec5ee;
-  border-radius: 50%;
-  -webkit-animation: spin 1s linear infinite;
-  animation-duration: 1s;
-  animation: spin 3s linear infinite;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  animation: loader-background 0.01s;
+  animation-fill-mode: forwards;
+  z-index: 10000;
+  animation-delay: 1.75s;
 }
 
-@keyframes spin {
+.loader-spinner-logo {
+  border: 0.625rem #9356DC solid;
+  border-top: 0.625rem solid #FF79DA;
+  border-bottom: 0.625rem solid #99E2D0;
+  width: 6.25rem;
+  height: 6.25rem;
+  border-radius: 50%;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  animation: loader 1200ms linear;
+}
+
+@keyframes loader-background {
   0% {
-    -webkit-transform: rotate(0deg);
+    opacity: 1;
   }
   100% {
-    -webkit-transform: rotate(360deg);
+    opacity: 0;
+    z-index: -9999;
+  }
+}
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(360deg);
+    opacity: 1;
   }
 }
 .header {
@@ -53,7 +77,6 @@ main {
   justify-content: center;
   align-items: center;
 }
-
 .header-logo {
   height: 57%;
   font-family: "Shrikhand";
@@ -64,11 +87,12 @@ main {
 .local {
   display: flex;
   justify-content: center;
-  padding: 1.25rem 1rem;
+  padding: 1.5rem 1rem;
   background-color: rgb(243, 243, 243);
   font-size: 1.2rem;
   position: relative;
   width: 100%;
+  margin-left: -1rem;
 }
 .local__icon {
   margin-right: 1rem;
@@ -91,27 +115,26 @@ main {
 }
 
 .hero__button {
-  opacity: 1;
-  padding: 0.75rem 1.5rem;
-  font-weight: 500;
-  font-size: 1.1rem;
-  border-radius: 12.5rem;
+  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
   color: white;
-  background: linear-gradient(0deg, rgba(147, 86, 220, 0.9), rgba(255, 121, 218, 0.9));
-  transition-duration: 0.25s;
-  box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
+  padding: 1.063rem 2.688rem;
+  border-radius: 3.75rem;
+  border: none;
+  display: block;
+  margin: 2.875rem auto auto auto;
+  font-size: 1.1rem;
+  box-shadow: 0.25rem 0.25rem 0.625rem rgba(0, 0, 0, 0.25);
   cursor: pointer;
 }
 
 .hero__button:hover {
   opacity: 0.8;
   background-color: white;
-  box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0.25rem 0.25rem 1rem rgba(222, 218, 218, 0);
   cursor: pointer;
 }
 
 .container {
-  max-width: 1445px;
   margin: auto;
   position: relative;
   display: flex;
@@ -130,10 +153,12 @@ main {
   padding: 0;
   list-style: none;
   counter-reset: compteListe;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
 }
-@media (min-width: 64rem) {
+@media (min-width: 1204px) {
   .tuto__steps {
-    display: flex;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 .tuto__step {
@@ -145,7 +170,7 @@ main {
   display: flex;
   position: relative;
 }
-@media (min-width: 64rem) {
+@media (min-width: 1204px) {
   .tuto__step {
     flex: 1;
     margin: 0;
@@ -167,7 +192,7 @@ main {
   background: #9356DC;
   height: 1.5rem;
   width: 1.5rem;
-  border-radius: 100px;
+  border-radius: 6.25rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -194,7 +219,7 @@ main {
   column-gap: 2rem;
   row-gap: 2rem;
 }
-@media (min-width: 64rem) {
+@media (min-width: 1204px) {
   .cards {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -263,7 +288,7 @@ main {
   background-clip: text;
   -webkit-background-clip: text;
   transition: 0.4s ease-in-out;
-  background-image: linear-gradient(0deg, rgba(147, 86, 220, 0.9), rgba(255, 121, 218, 0.9));
+  background-image: linear-gradient(to bottom right, #FF79DA, #9356DC);
 }
 .card__like {
   background-color: white !important;
@@ -280,7 +305,7 @@ main {
   align-items: flex-start;
   gap: 1rem;
 }
-@media (min-width: 64rem) {
+@media (min-width: 1204px) {
   .footer .container {
     flex-direction: row-reverse;
   }
@@ -298,7 +323,7 @@ main {
   margin: 0;
   gap: 0.438rem;
 }
-@media (min-width: 64rem) {
+@media (min-width: 1204px) {
   .footer__list {
     display: flex;
     flex-direction: row;

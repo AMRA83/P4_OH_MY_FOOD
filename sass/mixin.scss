@@ -1,0 +1,41 @@
+@mixin flexbox-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  @mixin header_style {
+    padding: $appPadding;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
+    z-index: 1000;
+    width: 100%;
+    height: 2.8%;
+  }
+@mixin loader {
+  position: fixed;
+      height: 100%;
+      width: 100%;
+      left: 0;
+      top: 0;
+      background-color: rgba(255,255,255,0.9);
+      animation: loader-background 0.01s;
+      animation-fill-mode: forwards;
+      z-index: 10000;
+      animation-delay: 1.75s;
+  }
+  
+  
+  @mixin button_style {
+      background: $gradient;
+      color: white;
+      padding: 1.063rem 2.688rem;
+      border-radius: 3.75rem;
+      border: none;
+      display: block;
+      margin: 2.875rem auto auto auto;
+      font-size: 1.1rem;
+      box-shadow: 0.25rem 0.25rem 0.625rem rgb(0 0 0 / 25%);
+      cursor: pointer;
+  }
+  
+  
+  
