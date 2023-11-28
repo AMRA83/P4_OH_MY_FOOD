@@ -304,11 +304,12 @@ main {
   flex-direction: column;
   padding: 1.375rem 1.563rem;
   align-items: flex-start;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 @media (min-width: 1204px) {
   .footer .container {
     flex-direction: row-reverse;
+    gap: 6rem;
   }
 }
 .footer__logo {
@@ -317,6 +318,7 @@ main {
   margin: 0;
   font-size: 1.2rem;
   margin-bottom: 1rem;
+  margin-right: 1.25rem;
 }
 .footer__list {
   list-style: none;
