@@ -11,7 +11,7 @@
     height: 2.8%;
   }
 @mixin loader {
-  position: fixed;
+      position: fixed;
       height: 100%;
       width: 100%;
       left: 0;
@@ -43,5 +43,14 @@
       position: relative;
       padding-bottom: 0.5rem;
       font-weight: normal;
+  }
+  @mixin heart{
+    height: 2rem;
+    width: 2rem;
+    background-color: transparent;
+    border: transparent 0rem solid;
+    position: relative;
+    padding: 0;
+    cursor: pointer;
   }
   

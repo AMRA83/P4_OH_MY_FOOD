@@ -19,9 +19,9 @@ body {
     }
     .loader-spinner-logo
   {
-    border: 0.625rem #9356DC solid;
-    border-top: 0.625rem solid #FF79DA;
-    border-bottom: 0.625rem solid #99E2D0;
+    border: 0.625rem $color-primary solid;
+    border-top: 0.625rem solid $color-secondary;
+    border-bottom: 0.625rem solid $color-tertiary;
     width: 6.25rem;
     height: 6.25rem;
     border-radius: 50%;
@@ -68,7 +68,7 @@ body {
       @include flexbox-center;
     
     &-logo {
-      height: 57%;
+      height: 50%;
       font-family: 'Shrikhand';
       font-size: 1.875rem;
       margin-bottom: $appPadding;
@@ -150,6 +150,7 @@ body {
         background-color: #f6f6f6;
         display: flex;
         position: relative;
+        
         @media (min-width:1204px) {
           flex: 1;
           margin: 0;
@@ -162,7 +163,9 @@ body {
     
         &:first-child {
           margin-top: 0;
-        }
+          
+          }
+        
     
         &:last-child {
           margin-bottom: 0;
@@ -183,7 +186,10 @@ body {
           left: -0.75rem;
         }
       }
-    
+      .tuto__step:hover > .tuto__icon {
+        color: $color-primary;
+      }
+      
       &__icon {
         margin-right: 1rem;
         color: #7e7e7e;
@@ -191,8 +197,9 @@ body {
           color: $color-primary;
         }
       }
-      
     }
+      
+   
     .restaurants {
       background-color: #f6f6f6;
       padding: ($appPadding + 1rem) $appPadding;
@@ -253,12 +260,7 @@ body {
         margin: 0;
       }
       &__btn {
-          height: 2rem;
-          width: 2rem;
-          background-color: transparent;
-          border: transparent 0rem solid;
-          padding: 0;
-          position: relative;
+          @include heart; 
         }
         i {
           position: absolute;
